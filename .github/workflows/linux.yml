@@ -26,16 +26,6 @@ jobs:
           echo "$(pwd)/cmake-3.13.0-Linux-x86_64/bin" >> $GITHUB_PATH
           cmake --version
 
-      - name: Installation
-        # The latest ubuntu doesn't contain gcc-9 by default anymore
-        run: |
-          sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-13 60
-          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 60
-          sudo update-alternatives --install /usr/bin/cpp cpp /usr/bin/cpp-13 60
-          sudo update-alternatives --set g++ /usr/bin/g++-13
-          sudo update-alternatives --set gcc /usr/bin/gcc-13
-          sudo update-alternatives --set cpp /usr/bin/cpp-13
-
       - name: Tests
         run: |
           ./scripts/test-unix.sh
