@@ -217,8 +217,8 @@ function(_detect_toolchain)
         get_filename_component(_compiler_name "${CMAKE_C_COMPILER}" NAME_WLE)
     elseif(DEFINED CMAKE_CXX_COMPILER)
         get_filename_component(_compiler_name "${CMAKE_CXX_COMPILER}" NAME_WLE)
-        string(REPLACE "g++" "gcc" "${_compiler_name}" _compiler_name)
-        string(REPLACE "clang++" "clang" "${_compiler_name}" _compiler_name)
+        string(REPLACE "g++" "gcc" _compiler_name "${_compiler_name}")
+        string(REPLACE "clang++" "clang" _compiler_name "${_compiler_name}")
     else()
         # Shouldn't reach here because cmake will try to detect compiler and set
         # corresponding variables.
