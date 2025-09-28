@@ -18,10 +18,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Install Visual Studio v144 toolset
-        run: |
-          choco install visualstudio2022buildtools --package-parameters "--add Microsoft.VisualStudio.Component.VC.v144"
-
       - name: Tests
         run: |
           cmake -DXREPO_PACKAGE_VERBOSE=ON example
