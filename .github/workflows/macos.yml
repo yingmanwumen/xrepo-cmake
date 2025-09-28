@@ -22,8 +22,8 @@ jobs:
         # To pass the tests, install the specified cmake
         run: |
           set -e
-          curl -sL https://cmake.org/files/v3.22/cmake-3.22.0-Darwin-x86_64.tar.gz | tar -xzv
-          echo "$(pwd)/cmake-3.22.0-Darwin-x86_64/CMake.app/Contents/bin" >> $GITHUB_PATH
+          curl -sL https://cmake.org/files/v3.22/cmake-3.22.0-macos-universal.tar.gz | tar -xzv
+          echo "$(pwd)/cmake-3.22.0-macos-universal/CMake.app/Contents/bin" >> $GITHUB_PATH
           cmake --version
 
       - name: Tests
