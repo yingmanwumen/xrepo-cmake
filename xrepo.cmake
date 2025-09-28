@@ -67,7 +67,7 @@ set(XREPO_XMAKEFILE "" CACHE STRING "Xmake script file of Xrepo package")
 #       `target_link_directories` to use the package.
 #     - User should figure out what library to use for `target_link_libraries`.
 #     - If `DIRECTORY_SCOPE` is specified, execute following code so the package
-#       can be used in cmake's direcotry scope:
+#       can be used in cmake's directory scope:
 #           include_directories(foo_INCLUDE_DIRS)
 #           link_directories(foo_LIBRARY_DIRS)
 # 3. Append package install directory to `CMAKE_PREFIX_PATH`.
@@ -375,7 +375,7 @@ function(xrepo_package package)
 
     _xrepo_finish_package_setup(${package_name})
 
-    # Store xrepo command and arguments for furture comparison.
+    # Store xrepo command and arguments for future comparison.
     set(_cache_xrepo_cmdargs_${package_name} "${_xrepo_cmdargs_${package_name}}" CACHE INTERNAL "")
 endfunction()
 
@@ -421,7 +421,7 @@ function(xrepo_target_packages target)
     endforeach()
 endfunction()
 
-# Append parent directorie of include directory to CMAKE_PREFIX_PATH.
+# Append parent directory of include directory to CMAKE_PREFIX_PATH.
 macro(_xrepo_set_cmake_prefix_path package_name)
     # CMake looks for quite a few directories under each prefix directory for config-file.cmake.
     # Thus Using CMAKE_PREFIX_PATH is easier and more reliable for config-file packages to be found
